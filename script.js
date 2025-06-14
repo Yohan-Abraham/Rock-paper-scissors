@@ -92,10 +92,3 @@ buttons.forEach((btn) => {
 
 
 
-function playGame() {
-    for (let i = 1; i <= 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-
-
-}
