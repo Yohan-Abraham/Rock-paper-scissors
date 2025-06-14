@@ -44,8 +44,22 @@ function playRound(input, computer) {
         humanScore++;
     }
 
-}
+    const playerElement = document.querySelector(".player");
+    const computerElement = document.querySelector(".computer");
 
+    const playerPara = document.createElement("p");
+    playerElement.textContent = "Player Score: ";
+    playerPara.textContent = humanScore;
+    playerPara.style.display = "inline";
+    playerElement.appendChild(playerPara);
+
+    const computerPara = document.createElement("p");
+    computerElement.textContent = "Computer Score: ";
+    computerPara.textContent.replace = computerScore;
+    computerPara.style.display = "inline";
+    computerElement.appendChild(computerPara);
+
+}
 
 
 
@@ -56,6 +70,8 @@ computerScore = 0;
 
 const buttons = document.querySelectorAll("button");
 
+
+
 let input;
 
 buttons.forEach((btn) => {
@@ -64,6 +80,8 @@ buttons.forEach((btn) => {
         playRound(input, getComputerChoice());
     });
 });
+
+
 
 // function playGame() {
 //     for (let i = 1; i <= 5; i++) {
