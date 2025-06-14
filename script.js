@@ -61,16 +61,11 @@ function playRound(input, computer) {
 
 }
 
-
-
-
 humanScore = 0;
 computerScore = 0;
 
 
 const buttons = document.querySelectorAll("button");
-
-
 
 let input;
 
