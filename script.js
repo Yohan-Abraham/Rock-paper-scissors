@@ -44,6 +44,20 @@ function playRound(input, computer) {
         humanScore++;
     }
 
+    if (humanScore == 5 || computerScore == 5) {
+        if (humanScore > computerScore) {
+            alert(`You Win! Your Score: ${humanScore}.`);
+        }
+        else if (computerScore > humanScore) {
+            alert(`Computer Wins! Computer Score: ${computerScore}.`);
+        }
+        else {
+            alert(`Its a Tie! Your Score: ${humanScore}\nComputer Score ${computerScore}.`);
+        }
+        humanScore = 0;
+        computerScore = 0;
+    }
+
     const playerElement = document.querySelector(".player");
     const computerElement = document.querySelector(".computer");
 
@@ -55,7 +69,7 @@ function playRound(input, computer) {
 
     const computerPara = document.createElement("p");
     computerElement.textContent = "Computer Score: ";
-    computerPara.textContent.replace = computerScore;
+    computerPara.textContent = computerScore;
     computerPara.style.display = "inline";
     computerElement.appendChild(computerPara);
 
@@ -78,18 +92,10 @@ buttons.forEach((btn) => {
 
 
 
-// function playGame() {
-//     for (let i = 1; i <= 5; i++) {
-//         playRound(getHumanChoice(), getComputerChoice());
-//     }
+function playGame() {
+    for (let i = 1; i <= 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
 
-//     if (humanScore > computerScore) {
-//         console.log(`You Win! Your Score: ${humanScore}.`);
-//     }
-//     else if (computerScore > humanScore) {
-//         console.log(`Computer Wins! Computer Score: ${computerScore}.`);
-//     }
-//     else {
-//         console.log(`Its a Tie! Your Score: ${humanScore}\nComputer Score ${computerScore}.`);
-//     }
-// }
+
+}
